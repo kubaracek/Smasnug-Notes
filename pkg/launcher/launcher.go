@@ -10,19 +10,17 @@ import (
 
 type Launcher interface {
 	InstallAppId(string) error
-	LaunchAppId(string) error
+	IsInstalledAppId(string) error
+	LaunchAppId(string) (bool, error)
 }
 
-const SAMSUNG_NOTES_INSTALL_ID = "9nblggh43vhv"
-const SAMSUNG_NOTES_LAUNCH_ID = "wyx1vj98g3asy"
+type Impl struct{}
 
-type SamsungNotes struct{}
-
-func NewSamsungNotes() *SamsungNotes {
-	return &SamsungNotes{}
+func NewLauncher() *Impl {
+	return &Impl{}
 }
 
-func (_ SamsungNotes) InstallAppId(appId string) error {
+func (_ Impl) InstallAppId(appId string) error {
 	// Create the winget command
 	cmd := exec.Command("winget", "install", appId, "--accept-package-agreements", "--accept-source-agreements")
 
@@ -37,7 +35,29 @@ func (_ SamsungNotes) InstallAppId(appId string) error {
 	return nil
 }
 
-func (_ SamsungNotes) LaunchAppId(appId string) error {
+func (_ Impl) IsInstalledAppId(appId string) (bool, error) {
+	cmd := exec.Command("winget", "list")
+
+	// Run the command and capture output/error
+	stdoutStderr, err := cmd.CombinedOutput()
+	if err != nil {
+		return false, fmt.Errorf("failed to list installed applications: %v", err)
+	}
+
+	// Convert the output to a string
+	output := string(stdoutStderr)
+
+	fmt.Println(output)
+
+	// Check if the appId is present in the output
+	if strings.Contains(output, appId) {
+		return true, nil
+	}
+
+	return false, nil
+}
+
+func (_ Impl) LaunchAppId(appId string) error {
 	samsungNotesCmd := fmt.Sprintf("start shell:AppsFolder\\SAMSUNGELECTRONICSCoLtd.SamsungNotes_%s!App", appId)
 
 	fmt.Println("Launching Samsung Notes")

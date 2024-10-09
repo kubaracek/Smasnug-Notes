@@ -7,11 +7,6 @@ launcher:
 	go build -o ./bin/weallonsamsung.exe ./cmd/launcher
 .PHONY: launcher
 
-setup:
-	go run github.com/akavel/rsrc -manifest ./cmd/setup/setup.exe.manifest -o ./cmd/setup/resource.syso
-	go build -o ./bin/setup.exe ./cmd/setup
-.PHONY: setup
-
 zip:
 	make -j 2 launcher setup
 	zip

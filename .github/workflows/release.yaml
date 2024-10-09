@@ -21,7 +21,7 @@ jobs:
 
       # Build the binaries using two jobs in parallel
       - name: Build binaries
-        run: make -j 2 launcher setup
+        run: make launcher
 
       # Upload the binaries as artifacts to the release
       - name: Upload binaries to release
@@ -29,6 +29,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
-          artifacts: "./bin/weallonsamsung.exe,./bin/setup.exe"
+          artifacts: "./bin/weallonsamsung.exe"
           draft: false
           prerelease: false
