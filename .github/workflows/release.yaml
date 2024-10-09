@@ -8,7 +8,8 @@ on:
 jobs:
   build:
     runs-on: ubuntu-latest
-
+    permissions:
+      contents: write
     steps:
       # Checkout the repository
       - name: Checkout code
@@ -25,20 +26,9 @@ jobs:
       - name: Build binaries
         run: make -j 2 launcher setup
 
-      - name: release
-        uses: actions/create-release@v1
-        id: create_release
-        with:
-          release_name: Release ${{ github.ref }}
-          tag_name: ${{ github.ref }}
-          draft: false
-          prerelease: false
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-
       # Upload the binaries as artifacts to the release
       - name: Upload binaries to release
-        uses: actions/create-release@latest
+        uses: ncipollo/release-action@v1
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
@@ -47,22 +37,3 @@ jobs:
             ./bin/setup.exe
           draft: false
           prerelease: false
-
-
-      - name: upload weallonsamsung launcher artifact
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/weallonsamsung.exe
-          asset_name: weallonsamsung.exe
-
-      - name: upload weallonsamsung setup artifact
-        uses: actions/upload-release-asset@v1
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
-        with:
-          upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./bin/setup.exe
-          asset_name: setup.exe
