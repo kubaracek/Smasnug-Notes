@@ -27,10 +27,12 @@ func (_ SamsungNotes) InstallAppId(appId string) error {
 	cmd := exec.Command("winget", "install", appId, "--accept-package-agreements", "--accept-source-agreements")
 
 	// Run the command and capture output/error
-	_, err := cmd.CombinedOutput()
+	stdoutStderr, err := cmd.CombinedOutput()
 	if err != nil {
 		return fmt.Errorf("installation failed: %v", err)
 	}
+
+	fmt.Printf("%s\n", stdoutStderr)
 
 	return nil
 }
