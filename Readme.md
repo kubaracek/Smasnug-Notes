@@ -1,8 +1,7 @@
 ![Samsung Notes running under Windows](images/notes-screen.png)
 
 # We All on Samsung
-A simple launcher that cloaks your Windows machine as a Samsung Galaxy Book
-by modifying Windows Registers only for the duration of the app startup when the check happens.
+A lightweight launcher that temporarily disguises your Windows machine as a Samsung Galaxy Book by modifying Windows registry settings during app startup, just for the duration of the system check.
 
 # Installation
 
