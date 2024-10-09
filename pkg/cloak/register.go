@@ -51,6 +51,9 @@ func NewRegisterCloak(registers RegisterValues) *RegisterCloak {
 
 func (r RegisterCloak) CloakExecution(fn func() error) error {
 	prevRegisters, err := r.updateRegisters.Update()
+	if err != nil {
+		return err
+	}
 
 	// Revert registers back
 	defer prevRegisters.Update()
