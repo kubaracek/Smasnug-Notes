@@ -2,7 +2,7 @@
 
 # Smasnug Notes – Run Samsung Notes on Windows
 
-Use **Samsung Notes** on your **Windows PC** with Smasnug Notes, a lightweight launcher that enables Samsung Notes functionality by temporarily modifying your system to resemble a **Samsung Galaxy Book**. This allows Samsung Notes to bypass its device restrictions.
+Run **Samsung Notes** on your **Windows PC** with Smasnug Notes, a lightweight launcher that enables Samsung Notes functionality by temporarily modifying your system to resemble a **Samsung Galaxy Book**. This allows Samsung Notes to bypass its device restrictions.
 
 ## How to Run Samsung Notes on Windows
 
