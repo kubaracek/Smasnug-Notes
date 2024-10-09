@@ -3,9 +3,9 @@ package main
 import (
 	"fmt"
 	"github.com/tawesoft/golib/v2/dialog"
+	pkgcloak "smasnugnotes/pkg/cloak"
+	pkglauncher "smasnugnotes/pkg/launcher"
 	"syscall"
-	pkgcloak "weallonsamsung/pkg/cloak"
-	pkglauncher "weallonsamsung/pkg/launcher"
 )
 
 const SAMSUNG_NOTES_INSTALL_ID = "9NBLGGH43VHV"

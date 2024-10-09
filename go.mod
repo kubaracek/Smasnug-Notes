@@ -1,4 +1,4 @@
-module weallonsamsung
+module smasnugnotes
 
 go 1.21.3
 

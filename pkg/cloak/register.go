@@ -7,7 +7,7 @@ import (
 
 type RegisterValues map[string]map[string]string
 
-// Updates registers and returns previous values as new RegisterValues
+// Update registers and returns previous values as new RegisterValues
 func (r RegisterValues) Update() (RegisterValues, error) {
 	prevRegisters := make(RegisterValues)
 

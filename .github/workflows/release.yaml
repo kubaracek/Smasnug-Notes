@@ -29,6 +29,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
-          artifacts: "./bin/weallonsamsung.exe"
+          artifacts: "./bin/SmasnugNotes.exe"
           draft: false
           prerelease: false

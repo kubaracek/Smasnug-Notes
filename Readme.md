@@ -1,13 +1,13 @@
 ![Samsung Notes running under Windows](images/notes-screen.png)
 
-# We All on Samsung
+# Smasnug Notes
 A lightweight launcher that temporarily disguises your Windows machine as a Samsung Galaxy Book by modifying Windows registry settings during app startup, just for the duration of the system check when Samsung Notes are being launched.
 
 ## Installation
 
 
 
-1) [Download the Launcher here (Releases page)](https://github.com/kubaracek/weallonsamsung/releases/download/v0.0.4/weallonsamsung.exe)
+1) [Download the Launcher here (Releases page)](https://github.com/kubaracek/SmasnugNotes/releases/download/v0.0.4/weallonsamsung.exe)
 2) Start the app. You will be greeted by Microsft Defender asking if you really want to run the app as it's downloaded from the internet. Click **More Info** and **Run Anyway**.
 3) If you have Microsoft notes already installed through Microsoft Store, it will just launch, otherwise the Launcher can install it for you.
 4) Enjoy!
