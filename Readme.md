@@ -1,7 +1,7 @@
 ![Samsung Notes running under Windows](images/notes-screen.png)
 
 # Smasnug Notes
-A lightweight launcher that temporarily disguises your Windows machine as a Samsung Galaxy Book by modifying Windows registry settings during app startup, just for the duration of the system check when Samsung Notes are being launched.
+A lightweight launcher for Samsung Notes that temporarily disguises your Windows machine as a Samsung Galaxy Book by modifying Windows registry during app startup.
 
 ## Installation
 
