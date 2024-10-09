@@ -5,6 +5,7 @@ import (
 	"github.com/shirou/gopsutil/process"
 	"os/exec"
 	"strings"
+	"syscall"
 	"time"
 )
 
@@ -23,20 +24,20 @@ func NewLauncher() *Impl {
 func (_ Impl) InstallAppId(appId string) error {
 	// Create the winget command
 	cmd := exec.Command("winget", "install", appId, "--accept-package-agreements", "--accept-source-agreements")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 
 	// Run the command and capture output/error
-	stdoutStderr, err := cmd.CombinedOutput()
+	_, err := cmd.CombinedOutput()
 	if err != nil {
 		return fmt.Errorf("installation failed: %v", err)
 	}
-
-	fmt.Printf("%s\n", stdoutStderr)
 
 	return nil
 }
 
 func (_ Impl) IsInstalledAppId(appId string) (bool, error) {
 	cmd := exec.Command("winget", "list")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 
 	// Run the command and capture output/error
 	stdoutStderr, err := cmd.CombinedOutput()
@@ -46,8 +47,6 @@ func (_ Impl) IsInstalledAppId(appId string) (bool, error) {
 
 	// Convert the output to a string
 	output := string(stdoutStderr)
-
-	fmt.Println(output)
 
 	// Check if the appId is present in the output
 	if strings.Contains(output, appId) {
@@ -60,11 +59,9 @@ func (_ Impl) IsInstalledAppId(appId string) (bool, error) {
 func (_ Impl) LaunchAppId(appId string) error {
 	samsungNotesCmd := fmt.Sprintf("start shell:AppsFolder\\SAMSUNGELECTRONICSCoLtd.SamsungNotes_%s!App", appId)
 
-	fmt.Println("Launching Samsung Notes")
 	// Execute the command via cmd.exe
 	cmd := exec.Command("cmd", "/C", samsungNotesCmd)
-
-	fmt.Println("Waiting for process to start...")
+	cmd.SysProcAttr = &syscall.SysProcAttr{HideWindow: true}
 
 	// Start the command
 	if err := cmd.Start(); err != nil {
