@@ -7,7 +7,7 @@ A lightweight launcher for Samsung Notes that temporarily disguises your Windows
 
 
 
-1) [Download the Launcher here (Releases page)](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.5/weallonsamsung.exe)
+1) [Download the Launcher here (Releases page)](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.7/Smasnug.Notes.exe)
 2) Start the app. You will be greeted by Microsft Defender asking if you really want to run the app as it's downloaded from the internet. Click **More Info** and **Run Anyway**.
 3) If you have Microsoft notes already installed through Microsoft Store, it will just launch, otherwise the Launcher can install it for you.
 4) Enjoy!
