@@ -1,21 +1,27 @@
 ![Samsung Notes running under Windows](images/notes-screen.png)
 
-# Smasnug Notes
-Allows your Windows PC run Samsung Notes.
-A lightweight launcher for Samsung Notes that temporarily disguises your Windows machine as a Samsung Galaxy Book by modifying Windows registry during app startup.
+# Smasnug Notes – Run Samsung Notes on Windows
 
-## How to run Samsung Notes on Windows
+Use **Samsung Notes** on your **Windows PC** with Smasnug Notes, a lightweight launcher that enables Samsung Notes functionality by temporarily modifying your system to resemble a **Samsung Galaxy Book**. This allows Samsung Notes to bypass its device restrictions.
 
-1) [Download the Launcher here (Releases page)](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.7/Smasnug.Notes.exe)
-2) Start the Smasnug Notes app. You will be greeted by Microsoft Defender asking if you really want to run the app as it's downloaded from the internet. Click **More Info** and **Run Anyway** to run the program.
-3) If you have Samsung Notes already installed through Microsoft Store, it will just launch, otherwise the Launcher can install Samsung Notes for you.
-4) Enjoy!
+## How to Run Samsung Notes on Windows
 
-### How to download Samsung Notes on Windows
-- Either start `Smasnug.Notes.exe` (Download in the guide above or go to Releases page) which will prompt you to install Samsung Notes and will do everything automatically
-- Or install Manually within your `Microsoft Store`
+Follow these steps to get **Samsung Notes running on your Windows device**:
 
-Keep in mind that Samsung Notes alone won't launch without this utility as the software is Device Locked for Samsung Devices only.
+1. **[Download the Smasnug Notes Launcher here](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.7/Smasnug.Notes.exe)** (Releases page).
+2. Launch the Smasnug Notes app. You might encounter a security warning from **Microsoft Defender** due to downloading from the internet. Select **More Info** and click **Run Anyway** to proceed.
+3. If you already have **Samsung Notes installed** from the Microsoft Store, the launcher will simply start it up. If not, Smasnug Notes will guide you through the installation process.
+4. Once installed, you're all set to use Samsung Notes on your Windows machine!
+
+## How to Download Samsung Notes on Windows
+
+There are two ways to get **Samsung Notes** on your PC:
+
+- Launch `Smasnug.Notes.exe` (downloaded from the guide above or the **Releases page**) to automatically install and configure **Samsung Notes** for your system.
+- Alternatively, you can manually install **Samsung Notes** from the **Microsoft Store**.
+
+Please note: **Samsung Notes is device-locked** to Samsung hardware, meaning it won't work on non-Samsung devices without the Smasnug Notes utility.
+
 
 ## License
 [![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)](https://www.gnu.org/licenses/gpl-3.0)
