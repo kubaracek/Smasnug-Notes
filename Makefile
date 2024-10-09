@@ -13,11 +13,6 @@ setup:
 	GOOS=windows GOARCH=amd64 CGO_ENABLED=1 CXX=x86_64-w64-mingw32-g++ CC=x86_64-w64-mingw32-gcc go build -o ./bin/setup.exe ./cmd/setup
 .PHONY: setup
 
-version:
-	@echo "Updating all .manifest files to version $(VERSION)"
-	@find . -name '*.manifest' -exec sed -i'' -e 's/{{version}}/$(VERSION)/g' {} +
-.PHONY: version
-
 zip:
 	make -j 2 launcher setup
 	zip

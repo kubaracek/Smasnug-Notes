@@ -19,9 +19,6 @@ jobs:
       - name: Set up build dependencies
         run: make
 
-      - name: Set version using tag number
-        run: make version VERSION=${{ github.ref_name }}
-
       # Build the binaries using two jobs in parallel
       - name: Build binaries
         run: make -j 2 launcher setup
