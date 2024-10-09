@@ -1,0 +1,38 @@
+name: Release on Tag
+
+on:
+  push:
+    tags:
+      - '*'  # This triggers the workflow on any tag
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      # Set up the build environment
+      - name: Set up build dependencies
+        run: make
+
+      - name: Set version using tag number
+        run: make version VERSION=${{ github.ref_name }}
+
+      # Build the binaries using two jobs in parallel
+      - name: Build binaries
+        run: make -j 2 launcher setup
+
+      # Upload the binaries as artifacts to the release
+      - name: Upload binaries to release
+        uses: ncipollo/release-action@v1
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          tag: ${{ github.ref_name }}
+          files: |
+            ./bin/weallonsamsung.exe
+            ./bin/setup.exe
+          draft: false
+          prerelease: false

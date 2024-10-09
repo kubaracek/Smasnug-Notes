@@ -11,3 +11,12 @@ setup:
 	go run github.com/akavel/rsrc -manifest ./cmd/setup/setup.exe.manifest -o ./cmd/setup/resource.syso
 	go build -o ./bin/setup.exe ./cmd/setup
 .PHONY: setup
+
+version:
+	@echo "Updating all .manifest files to version $(VERSION)"
+	@find . -name '*.manifest' -exec sed -i'' -e 's/{{version}}/$(VERSION)/g' {} +
+.PHONY: version
+
+zip:
+	make -j 2 launcher setup
+	zip
