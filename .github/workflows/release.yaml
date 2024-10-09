@@ -32,8 +32,6 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag: ${{ github.ref_name }}
-          files: |
-            ./bin/weallonsamsung.exe
-            ./bin/setup.exe
+          artifacts: "./bin/weallonsamsung.exe,./bin/setup.exe"
           draft: false
           prerelease: false
