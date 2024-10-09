@@ -1,6 +1,6 @@
 default:
 	go install github.com/akavel/rsrc
-	apt-get install gcc-mingw-w64
+	sudo apt-get install gcc-mingw-w64
 .PHONY: default
 
 launcher:
