@@ -3,12 +3,10 @@
 # Smasnug Notes
 A lightweight launcher for Samsung Notes that temporarily disguises your Windows machine as a Samsung Galaxy Book by modifying Windows registry during app startup.
 
-## Installation
-
-
+## How to run Samsung Notes on Windows
 
 1) [Download the Launcher here (Releases page)](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.7/Smasnug.Notes.exe)
-2) Start the app. You will be greeted by Microsft Defender asking if you really want to run the app as it's downloaded from the internet. Click **More Info** and **Run Anyway**.
+2) Start the Smasnug Notes app. You will be greeted by Microsoft Defender asking if you really want to run the app as it's downloaded from the internet. Click **More Info** and **Run Anyway** to run the program.
 3) If you have Microsoft notes already installed through Microsoft Store, it will just launch, otherwise the Launcher can install it for you.
 4) Enjoy!
 
