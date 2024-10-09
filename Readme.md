@@ -8,7 +8,7 @@ Run **Samsung Notes** on your **Windows PC** with Smasnug Notes, a lightweight l
 
 Follow these steps to get **Samsung Notes running on your Windows device**:
 
-1. **[Download the Smasnug Notes Launcher here](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.7/Smasnug.Notes.exe)** (Releases page).
+1. **[Download the Smasnug Notes Launcher here](https://github.com/kubaracek/Smasnug-Notes/releases/download/v0.0.8/Smasnug.Notes.exe)** (Releases page).
 2. Launch the Smasnug Notes app. You might encounter a security warning from **Microsoft Defender** due to downloading from the internet. Select **More Info** and click **Run Anyway** to proceed.
 3. If you already have **Samsung Notes installed** from the Microsoft Store, the launcher will simply start it up. If not, Smasnug Notes will guide you through the installation process.
 4. Once installed, you're all set to use Samsung Notes on your Windows machine!
