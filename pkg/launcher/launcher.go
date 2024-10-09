@@ -9,8 +9,8 @@ import (
 )
 
 type Launcher interface {
-	InstallApp() error
-	LaunchApp() error
+	InstallAppId(string) error
+	LaunchAppId(string) error
 }
 
 const SAMSUNG_NOTES_INSTALL_ID = "9nblggh43vhv"
@@ -22,9 +22,9 @@ func NewSamsungNotes() *SamsungNotes {
 	return &SamsungNotes{}
 }
 
-func (_ SamsungNotes) InstallApp() error {
+func (_ SamsungNotes) InstallAppId(appId string) error {
 	// Create the winget command
-	cmd := exec.Command("winget", "install", SAMSUNG_NOTES_INSTALL_ID, "--accept-package-agreements", "--accept-source-agreements")
+	cmd := exec.Command("winget", "install", appId, "--accept-package-agreements", "--accept-source-agreements")
 
 	// Run the command and capture output/error
 	_, err := cmd.CombinedOutput()
@@ -35,8 +35,8 @@ func (_ SamsungNotes) InstallApp() error {
 	return nil
 }
 
-func (_ SamsungNotes) LaunchApp() error {
-	samsungNotesCmd := fmt.Sprintf("start shell:AppsFolder\\SAMSUNGELECTRONICSCoLtd.SamsungNotes_%s!App", SAMSUNG_NOTES_LAUNCH_ID)
+func (_ SamsungNotes) LaunchAppId(appId string) error {
+	samsungNotesCmd := fmt.Sprintf("start shell:AppsFolder\\SAMSUNGELECTRONICSCoLtd.SamsungNotes_%s!App", appId)
 
 	fmt.Println("Launching Samsung Notes")
 	// Execute the command via cmd.exe
